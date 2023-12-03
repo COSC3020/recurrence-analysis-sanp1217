@@ -31,3 +31,19 @@ function mystery(n) {
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+Recurrence relation:
+1 if n $\le$ 1
+else 3T($\frac{n}{3}$ + $n^5$)
+
+T(n) = 3T($\frac{n}{3}$) + $n^5$<br>
+= $3 (3T(\frac{\frac{n}{3}}{3}) + (\frac{n}{3})^5) + n^5$ <br>
+= $9T(\frac{n}{9}) + 3\frac{n^5}{3^5} + n^5$ <br>
+= $3^iT(\frac{n}{3i}) + 100 + n^5$ Note: $3\frac{n^5}{3^5}$ is substituted by 100 since it will be some constant anyways. <br>
+= $3^{\log_{3}(n)} T(\frac{n}{3^{\log_{3}(n)}}) + n^5$ for i = $\log_{3}{n}$ <br>
+= n + $n^5$ $\in O(n^5)$
+
+
+
+
+
