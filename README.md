@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13123890&assignment_repo_type=AssignmentRepo)
 # Recurrence Analysis -- Mystery Function
 
 Analyze the running time of the following recursive procedure as a function of
@@ -30,3 +31,19 @@ function mystery(n) {
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+Recurrence relation:
+1 if n $\le$ 1
+else 3T($\frac{n}{3}$ + $n^5$)
+
+T(n) = 3T($\frac{n}{3}$) + $n^5$<br>
+= $3 (3T(\frac{\frac{n}{3}}{3}) + (\frac{n}{3})^5) + n^5$ <br>
+= $9T(\frac{n}{9}) + 3\frac{n^5}{3^5} + n^5$ <br>
+= $3^iT(\frac{n}{3i}) + 100 + n^5$ Note: $3\frac{n^5}{3^5}$ is substituted by 100 since it will be some constant anyways. <br>
+= $3^{\log_{3}(n)} T(\frac{n}{3^{\log_{3}(n)}}) + n^5$ for i = $\log_{3}{n}$ <br>
+= n + $n^5$ $\in O(n^5)$
+
+
+
+
+
